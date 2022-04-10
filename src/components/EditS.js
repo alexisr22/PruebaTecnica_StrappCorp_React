@@ -1,10 +1,11 @@
 import axios from "axios";
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, Component} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const endpoint= 'http://localhost:8000/api/student/'
 
 const EditS = ()=>{
+
 
     const [name_class, setName_class]=useState('')
     const [classroom, setClassroom]=useState('')

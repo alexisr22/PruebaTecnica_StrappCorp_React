@@ -18,7 +18,7 @@ const ShowS = () => {
     }
 
     const deleteStudent = async (id)=>{
-        await axios.delete(`${endpoint}/product/${id}`)
+        await axios.delete(`http://localhost:8000/api/student/${id}`)
         getAllStudents()
     }
 
@@ -46,7 +46,7 @@ const ShowS = () => {
                         <td> {student.classroom} </td>
                         <td> {student.teacher} </td>
                         <td>
-                            <Link to={"/editS/${teacher.id}"} className='btn btn-warning' >Editar</Link>
+                            <Link to={`/editS/${student.id}`} className='btn btn-warning' >Editar</Link>
                             <button onClick={()=>deleteStudent(student.id)} className='btn btn-danger' >Eliminar</button>                            
                         </td>                     
                     </tr>

@@ -27,6 +27,7 @@ const CreateS = () => {
 
     const store = async(e)=>{
         e.preventDefault()
+        console.log(endpoint, {name_class: name_class, classroom: classroom, teacher: teacher})
         await axios.post(endpoint, {name_class: name_class, classroom: classroom, teacher: teacher})
         navigate('/student')
     }
@@ -55,10 +56,10 @@ const CreateS = () => {
             </div>
             <div className='mb-3'>
                 <label>Nombre del profesor</label>
-                <select className='form-control' >
+                <select className='form-control' value={teacher}
+                       onChange={ (e)=> setTeacher(e.target.value)} >
                     { teachers.map(teacher=>(
-                       <option value={teacher}
-                       onChange={ (e)=> setTeacher(e.teacher.name)} >{teacher.name}</option>
+                       <option value={teacher.name} >{teacher.name}</option>
                     ))}
                 </select>
                 {/* <input
